@@ -1,54 +1,64 @@
 //Document ready
+$(document).ready(function () {
 
-//Create an array of wordsToSearch
+    //Create an initial array of wordsToSearch
+    var wordsToSearch = ["dogs", "Frozen", "Baby Shark", "Peppa Pig", "Taylor Swift", "Spiderman", "panda", "Elmo"];
 
-var wordsToSearch = ["dogs","Frozen","Baby Shark","Peppa Pig"];
+    //Create a button for each element of the array and show it in the buttons-go-here div
+    function createButtons() {
+        $("#buttons-go-here").empty();
+        for (i = 0; i < wordsToSearch.length; i++) {
+            var buttonWord = $("<button>");
+            buttonWord.text(wordsToSearch[i]);
+            buttonWord.addClass("btn-word-to-search btn-success");
+            buttonWord.attr("data-name", wordsToSearch[i]);
+            $("#buttons-go-here").append(buttonWord);
+        }
+    }
 
-//Create a button for each element of the array and show it in the buttons-go-here div
+    createButtons();
 
+    //Create a button for each new word the user inputs and show it with the rest of the buttons. 
+    //Remember to add the code to prevent the page from reloading if the user clicks the button 
+    $(document.body).on("click", ".add-word", function () {
+        event.preventDefault();
+        var newWord = $("#keyword").val();
+        wordsToSearch.push(newWord);
+        //console.log(newWord);
+        createButtons();
+        $("#keyword").val("");
+    })
 
-function createButtons () {
-$("#buttons-go-here").empty();
-for (i=0; i<wordsToSearch.length; i++) {
-var buttonWord = $("<button>");
-buttonWord.text(wordsToSearch[i]);
-buttonWord.addClass("btn-word-to-search btn-success");
-buttonWord.attr("data-name",wordsToSearch[i]);
-$("#buttons-go-here").append(buttonWord);
-}
-}
+    //Create a var to catch the selected rating
+    var rating = "g";
+    $(document.body).on("click", ".form-check-input", function () {
+        if ($("input[type='radio'].form-check-input").is(':checked')) {
+            rating = $("input[type='radio'].form-check-input:checked").val();
+            console.log(rating);
 
-createButtons();
+        }
+    })
 
-//Create a button for each new word the user inputs and show it with the rest of the buttons. 
-//Remember to add the code to prevent the page from reloading if the user clicks the button 
+    //Create a .ajax to call the gifs with the selected rating and the word from the button. Show 10 in the gifs-go-here div
+    //Make the gifs appear static the first time, move when clicked and stop when clicked again
+    $(document.body).on("click", ".btn-word-to-search", function () {
 
-$(document.body).on("click", ".add-word", function() {
-event.preventDefault();
-var newWord = $("#keyword").val();
-wordsToSearch.push(newWord);
-//console.log(newWord);
-createButtons();
-$("#keyword").val("");
-})
+        var searcht = $(this).attr("data-name")
+        var searchterm = searcht.replace(" ", "%20");
+        var limit = 3;
 
-//Create a var to catch the selected rating
-var selectedRating = [];
-$(document.body).on("click", ".rating", function() {
+        var queryURL = "https://api.giphy.com/v1/gifs/search?api_key=Q0tY5PqO7bjFtAhhEM4rRK0fvzUa8pp5&q=" + searchterm +"&rating="+rating+"&limit="+limit;
+        console.log(queryURL);
 
-if($("input[type='checkbox'].rating").is(':checked')) {
-     	selectedRating = selectedRating+$("input[type='checkbox'].rating:checked").val();
-    alert(selectedRating);
+        $.ajax({
+            url: queryURL,
+            method: "GET"
+        }).then(function (response) {
+            console.log(response);
+        });
 
-}
-console.log(selectedRating);
+    })
 
-})
+    //Show extra info about the gifs    
 
-//Create a .ajax to call the gifs with the selected rating and the word from the button. Show 10 in the gifs-go-here div
-
-//Make the gifs appear static the first time, move when clicked and stop when clicked again
-
-//Show extra info about the gifs
-
-
+}); //closing of document ready
