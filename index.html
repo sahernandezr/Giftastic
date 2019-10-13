@@ -10,108 +10,95 @@
 </head>
 
 
-  <body>
+<body>
 
-    <!--Nav bar-->
-      <nav class="navbar sticky-top navbar-expand-md bg-dark navbar-dark">
-        <a class="navbar-brand" href="index.html">Sandra Hernández</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="collapsibleNavbar">
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
-              <a class="nav-link" href="index.html">About</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="portfolio.html">Portfolio</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="contact.html">Contact</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#" download>CV</a>
-            </li>
-          </ul>
+  <!--Nav bar-->
+  <nav class="navbar sticky-top navbar-expand-md bg-dark navbar-dark">
+    <a class="navbar-brand" href="index.html">Sandra Hernández</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="collapsibleNavbar">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="index.html">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="portfolio.html">Portfolio</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="contact.html">Contact</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#" download>CV</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <!--Container-->
+  <div id="container" style="width:960px;margin:auto auto">
+
+    <!--Title and instructions-->
+    <div class="jumbotron">
+      <div class="row">
+        <div class="col-sd-6">
+          <h1 class="display-4">Gif search for kids</h1>
+          <p>Add a keyword and get just gifs rated G.</p>
         </div>
-      </nav>
 
-      <!--Container-->
-        <div id="container" style="width:960px;margin:auto auto">
-
-          <!--Title and instructions-->
-            <div class="jumbotron">
-              <div class="row">
-                <div class="col-sd-6">
-                  <h1 class="display-4">Gif search for kids</h1>
-                  <p>Add a keyword and get just gifs rated G, PG or PG-13.</p>
-                </div>
-
-                <!-- Search box and rating selector -->
-                  <div class="col-sm-4">
-                    <div class="input-group input-group-lg">
-                      <input type="text" class="form-control" aria-label="Sizing example input"
-                        aria-describedby="inputGroup-sizing-lg" placeholder="example: dogs" id="keyword">
-                    </div>
-                    <a class="btn btn-danger btn-lg add-word" role="button" id="add-search-term"
-                      style="margin: 10px auto">Add a new search term</a>
-                  </div>
-
-                  <div id="rating" class="col-sm-2">
-                    <ul class="list-group">
-                      <li class="list-group-item d-flex justify-content-between align-items-center">
-                        G
-                        <input class="form-check-input" name="rating" type="radio" id="rating.g" value="g">
-                      </li>
-                      <li class="list-group-item d-flex justify-content-between align-items-center">
-                        PG
-                        <input class="form-check-input" name="rating" type="radio" id="rating-pg" value="pg">
-                      </li>
-                      <li class="list-group-item d-flex justify-content-between align-items-center">
-                        PG-13
-                        <input class="form-check-input" name="rating" type="radio" id="rating-pg-13" value="pg-13">
-                      </li>
-                    </ul>
-                  </div>
-
-              </div>
-            </div>
-            <!--closing jumbotron & first row-->
-
-              <div class="jumbotron">
-                <h2>Click each button to get your gifs</h2>
-                <div class="col-sm-12" id="buttons-go-here">
-                </div>
-              </div>
-              <!--closing buttons go here div-->
-
-              <div id="search-results">
-                <div class="jumbotron">
-                  <h2>Your gifs</h2>
-                </div>
-                <div id="gifs-go-here">
-                </div>
-              </div>
-              <!--closing search results div-->
-
-              <!--Sticky Footer still needs work -->
-              <footer class="footer">
-                <div class="container">
-                  <span class="text"><small>Copyright &#9400;</small></span>
-                </div>
-              </footer>
-
+        <!-- Search box and rating selector -->
+        <div class="col-sm-6">
+          <div class="input-group input-group-lg">
+            <input type="text" class="form-control" aria-label="Sizing example input"
+              aria-describedby="inputGroup-sizing-lg" placeholder="example: dogs" id="keyword">
+          </div>
+          <a class="btn btn-danger btn-lg add-word" role="button" id="add-search-term" style="margin: 10px auto">Add a
+            new search term</a>
         </div>
-        <!--closing container-->
+      </div>
+    </div>
+    <!--closing jumbotron & first row-->
+
+    <div class="jumbotron">
+      <h2>Click each button to get your gifs</h2>
+      <div class="col-sm-12" id="buttons-go-here">
+      </div>
+    </div>
+    <!--closing buttons go here div-->
+    <h2>Your gifs</h2>
+    <!-- <div class="jumbotron" id="search-results"> -->
+
+    <div id="gifs-go-here">
+    </div>
+
+    <!-- </div> -->
+    <!--closing search results div-->
+
+    <!--Sticky Footer still needs work -->
+    <footer class="footer">
+      <div class="container">
+        <span class="text"><small>Copyright &#9400;</small></span>
+      </div>
+    </footer>
+
+  </div>
+  <!--closing container-->
 
 
-        
-        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-        <script src="https://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
-          <script src="javascript.js"></script>
-  </body>
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+  <script src="javascript.js"></script>
+</body>
 
 </html>

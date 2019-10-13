@@ -14,3 +14,30 @@ padding-top: 10px;
 padding-bottom: 10px;
 
 }
+
+.card {
+    width: 25%;
+    display: inline-block;
+    /* height: 120px; */
+    /* float: left; */
+}
+
+.footer, #search-results, .gifsContainer {
+    clear: both;
+}
+
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+
+img {
+    width: 100%; 
+    display: block;
+    padding: 3px;
+}
+
+.btn-danger {
+    float: right;
+}
