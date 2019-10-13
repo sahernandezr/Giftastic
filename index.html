@@ -1,110 +1,129 @@
 <html>
+
 <head>
-<title>Gif search for kids</title>
-<link rel="stylesheet" href="css/reset.css">
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-<link rel="stylesheet" href="css/sketchy-bootswatch.css">
-<link rel="stylesheet" href="css/style.css">
+  <title>Gif search for kids</title>
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/sketchy-bootswatch.css">
+  <link rel="stylesheet" href="css/style.css">
 </head>
-<!–– ––>
-<body>
 
-<!––Nav bar––>
-<nav class="navbar sticky-top navbar-expand-md bg-dark navbar-dark">
-                                <a class="navbar-brand" href="index.html">Sandra Hernández</a>
-                                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-                                        <span class="navbar-toggler-icon"></span>
-                                </button>
-                                <div class="collapse navbar-collapse" id="collapsibleNavbar">
-                                        <ul class="navbar-nav ml-auto">
-                                            <li class="nav-item">
-                                                <a class="nav-link" href="index.html">About</a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a class="nav-link" href="portfolio.html">Portfolio</a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a class="nav-link" href="contact.html">Contact</a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a class="nav-link" href="#" download>CV</a>
-                                            </li>
-                                          </ul>
-                                        </div>
-                                      </nav>
 
-<!––Container––>
-<div id="container" style="width:960px;margin:auto auto">
+  <body>
 
-<!––Title and instructions––>
-<div class="jumbotron">
-<div class="row">
-<div class="col-sd-6">
-  <h1 class="display-4">Gif search for kids</h1>
-  <p>Add a keyword and get just gifs rated G. PG or PG-13.</p>
-</div>
+    <!--Nav bar-->
+      <nav class="navbar sticky-top navbar-expand-md bg-dark navbar-dark">
+        <a class="navbar-brand" href="index.html">Sandra Hernández</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="portfolio.html">Portfolio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contact.html">Contact</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#" download>CV</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
 
-<!–– Search box and rating selector ––>
-<div class="col-sm-4">
-<div class="input-group input-group-lg">
-<input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg" placeholder="example: dogs" id="keyword">
-</div>
-  <a class="btn btn-danger btn-lg" href="#" role="button" id="search-button" style="margin: 10px auto">Search</a>
-</div>
+      <!--Container-->
+        <div id="container" style="width:960px;margin:auto auto">
 
-<div id="rating" class="col-sm-2">
-<ul class="list-group">
-  <li class="list-group-item d-flex justify-content-between align-items-center">
-    G
-    <input class="form-check-input" type="radio" id="rating.g" value="g" checked>
-  </li>
-  <li class="list-group-item d-flex justify-content-between align-items-center">
-    PG
-    <input class="form-check-input" type="radio" id="rating-pg" value="pg">
-  </li>
-  <li class="list-group-item d-flex justify-content-between align-items-center">
-    PG-13
-    <input class="form-check-input" type="radio" id="rating-pg-13" value="pg-13">
-  </li>
-</ul>
-</div>
+          <!--Title and instructions-->
+            <div class="jumbotron">
+              <div class="row">
+                <div class="col-sd-6">
+                  <h1 class="display-4">Gif search for kids</h1>
+                  <p>Add a keyword and get just gifs rated G, PG or PG-13.</p>
+                </div>
 
-</div>
-</div> <!––closing jumbotron & first row––>
+                <!-- Search box and rating selector -->
+                  <div class="col-sm-4">
+                    <div class="input-group input-group-lg">
+                      <input type="text" class="form-control" aria-label="Sizing example input"
+                        aria-describedby="inputGroup-sizing-lg" placeholder="example: dogs" id="keyword">
+                    </div>
+                    <a class="btn btn-danger btn-lg add-word" role="button" id="add-search-term"
+                      style="margin: 10px auto">Add a new search term</a>
+                  </div>
 
-<div id="buttons-go-here">
-<div class="jumbotron">
-<div class="col-sm-12">
-<h2>Click each button to get your results</h2>
-<button type="button" class="btn btn-success">Dogs</button>
-<button type="button" class="btn btn-info">Frozen</button>
-<button type="button" class="btn btn-warning">Baby Shark</button>
-</div>
-</div>
-</div> <!--closing buttons go here div-->
+                  <div id="rating" class="col-sm-2">
+                    <ul class="list-group">
+                      <li class="list-group-item d-flex justify-content-between align-items-center">
+                        G
+                        <input class="form-check-input rating" type="checkbox" id="rating.g" value="g">
+                      </li>
+                      <li class="list-group-item d-flex justify-content-between align-items-center">
+                        PG
+                        <input class="form-check-input rating" type="checkbox" id="rating-pg" value="pg">
+                      </li>
+                      <li class="list-group-item d-flex justify-content-between align-items-center">
+                        PG-13
+                        <input class="form-check-input rating" type="checkbox" id="rating-pg-13" value="pg-13">
+                      </li>
+                    </ul>
+                  </div>
 
-<div id="search-results">
-<div class="jumbotron">
-<h2>Your gifs</h2>
-<div style="width:25%;height:0;padding-bottom:25%;position:relative;"><iframe src="https://giphy.com/embed/9Rt0V2POR2xA4" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div><p><a href="https://giphy.com/gifs/supersimple-swimming-supersimplesongs-9Rt0V2POR2xA4">via GIPHY</a></p>
-</div>
-</div> <!--closing search results div-->
+              </div>
+            </div>
+            <!--closing jumbotron & first row-->
 
-<!--Sticky Footer still needs work -->
-<footer class="footer">
+              <div class="jumbotron">
+                <h2>Click each button to get your results</h2>
+                <div class="col-sm-12" id="buttons-go-here">
+                  <!--<button type="button" class="btn btn-success btn-word-to-search">Hard-coded-1</button> -->
+                  <!--<button type="button" class="btn btn-info btn-word-to-search">Hard-coded-2</button> -->
+                  <!--<button type="button" class="btn btn-warning btn-word-to-search">Hard-coded-3</button> -->
+                </div>
+              </div>
+              <!--closing buttons go here div-->
+
+              <div id="search-results">
+                <div class="jumbotron">
+                  <h2>Your gifs</h2>
+                  <div style="width:25%;height:0;padding-bottom:25%;position:relative;"><iframe
+                      src="https://giphy.com/embed/9Rt0V2POR2xA4" width="100%" height="100%" style="position:absolute"
+                      frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div>
+                  <p><a href="https://giphy.com/gifs/supersimple-swimming-supersimplesongs-9Rt0V2POR2xA4">via GIPHY</a>
+                  </p>
+                </div>
+                <div id="gifs-go-here">
+                </div>
+              </div>
+              <!--closing search results div-->
+
+              <!--Sticky Footer still needs work -->
+              <footer class="footer">
                 <div class="container">
                   <span class="text"><small>Copyright &#9400;</small></span>
                 </div>
-        </footer>
+              </footer>
 
-</div> <!––closing container––>
+        </div>
+        <!--closing container-->
 
- 
 
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-<script></script>
-</body>
+
+          <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"></script>
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+            crossorigin="anonymous"></script>
+          <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+            crossorigin="anonymous"></script>
+          <script src="javascript.js"></script>
+  </body>
 
 </html>

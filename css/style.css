@@ -1,3 +1,16 @@
 body {
-background: url(linedpaper.jpg);
+background: url(linedpaper_2x.png);
+}
+
+#container {
+width:960px;
+margin:auto auto;
+}
+
+.jumbotron {
+margin-top: 15px;
+margin-bottom: 10px;
+padding-top: 10px;
+padding-bottom: 10px;
+
 }
