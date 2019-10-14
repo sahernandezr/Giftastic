@@ -2,7 +2,7 @@
 $(document).ready(function () {
 
     //Create an initial array of wordsToSearch
-    var wordsToSearch = ["dogs", "Frozen", "Baby Shark", "Peppa Pig", "Taylor Swift", "Spiderman", "panda", "Elmo"];
+    var wordsToSearch = ["dogs", "Frozen", "Baby Shark", "Peppa Pig", "Taylor Swift", "Spiderman", "panda", "Elmo", "Happy Birthday", "Lego Movie", "yay", "Fornite", "Minecraft"];
 
     //Create a button for each element of the array and show it in the buttons-go-here div
     function createButtons() {
@@ -10,7 +10,7 @@ $(document).ready(function () {
         for (i = 0; i < wordsToSearch.length; i++) {
             var buttonWord = $("<button>");
             buttonWord.text(wordsToSearch[i]);
-            buttonWord.addClass("btn-word-to-search btn-success");
+            buttonWord.addClass("btn btn-word-to-search btn-success");
             buttonWord.attr("data-name", wordsToSearch[i]);
             $("#buttons-go-here").append(buttonWord);
         }
@@ -47,7 +47,7 @@ $(document).ready(function () {
         var searchterm = searcht.replace(" ", "%20");
         var limit = 10;
 
-        var queryURL = "https://api.giphy.com/v1/gifs/search?api_key=Q0tY5PqO7bjFtAhhEM4rRK0fvzUa8pp5&q=" + searchterm +"&rating="+rating+"&limit="+limit;
+        var queryURL = "https://api.giphy.com/v1/gifs/search?api_key=Q0tY5PqO7bjFtAhhEM4rRK0fvzUa8pp5&q=" + searchterm + "&rating=" + rating + "&limit=" + limit;
         console.log(queryURL);
 
         $.ajax({
@@ -58,44 +58,33 @@ $(document).ready(function () {
 
             var results = response.data;
             var jumboWord = $("<div>")
-                jumboWord.html("<h2>"+searcht+"</h2>");
-                jumboWord.addClass("jumbotron gifsContainer clearfix text-info");
-                $("#gifs-go-here").prepend(jumboWord);
+            jumboWord.html("<h2>" + searcht + "</h2>");
+            jumboWord.addClass("jumbotron gifsContainer clearfix text-info");
+            $("#gifs-go-here").prepend(jumboWord);
 
             for (var i = 0; i < results.length; i++) {
-                
+
                 var Card = $("<div>");
                 Card.addClass("card border-info mb-3 clearfix");
                 (jumboWord).append(Card);
-                Card.html("<img src='"+results[i].images.fixed_height_still.url+"'>")
-                Card.append("<p>Title: "+results[i].title+"</p>");
-                Card.append("<p>Rating: "+results[i].rating+"</p>");
-                
+                Card.html("<img src='" + results[i].images.fixed_height_still.url + "' data-still='" + results[i].images.fixed_height_still.url + "' data-animate='" + results[i].images.fixed_height.url + "' data-state='still' class='gif'>")
+                Card.append("<p>" + results[i].title + "</p>");
+                Card.append("<p>Rating: " + results[i].rating + "</p>");
+            }
 
-                
+            $(".gif").on("click", function () {
+                var state = $(this).attr("data-state");
 
-                // var title = results[i].title;
-                // var rating = results[i].rating;
-                // var imgsrc = results[i].images.fixed_width_still.url;
 
-                // console.log(title);
-                // console.log(rating);
-                // console.log(imgsrc);
-               
-                //var gifDiv = $("<div class='card border-info mb-3>'");
-                // var gifTitle = $("<div class='card-header'>").text(title);
-                // (gifDiv).append(gifTitle);
-                // var gifBody = $("<div class='card-body'>");
-                // (gifDiv).append(gifBody);
-                // var gifImage = $("<img>")
-                // gifImage.attr("src", results[i].images.fixed_height.url);
-                // (gifBody).append(gifImage)
-                // var gifRating = $("<p>").text("Rating: " + rating);
-                // (gifDiv).append(gifRating);
-    
-                
-              }
-              
+                if (state === "still") {
+                    $(this).attr("src", ($(this).attr("data-animate")));
+                    $(this).attr("data-state", "animate");
+                } else {
+                    $(this).attr("src", ($(this).attr("data-still")));
+                    $(this).attr("data-state", "still");
+                }
+            });
+
         });
 
     })

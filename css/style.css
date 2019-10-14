@@ -18,8 +18,6 @@ padding-bottom: 10px;
 .card {
     width: 25%;
     display: inline-block;
-    /* height: 120px; */
-    /* float: left; */
 }
 
 .footer, #search-results, .gifsContainer {
@@ -40,4 +38,9 @@ img {
 
 .btn-danger {
     float: right;
+    margin: 10px auto;
+}
+
+.btn-success {
+    margin: 3px 3px;
 }
