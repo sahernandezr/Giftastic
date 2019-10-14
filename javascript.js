@@ -2,7 +2,7 @@
 $(document).ready(function () {
 
     //Create an initial array of wordsToSearch
-    var wordsToSearch = ["dogs", "Frozen", "Baby Shark", "Peppa Pig", "Taylor Swift", "Spiderman", "panda", "Elmo", "Happy Birthday", "Lego Movie", "yay", "Fornite", "Minecraft"];
+    var wordsToSearch = ["dogs", "Frozen", "Baby Shark", "Peppa Pig", "Taylor Swift", "Spiderman", "panda", "Elmo", "Happy Birthday", "Lego Movie", "yay", "Fortnite", "Minecraft"];
 
     //Create a button for each element of the array and show it in the buttons-go-here div
     function createButtons() {
@@ -67,11 +67,13 @@ $(document).ready(function () {
                 var Card = $("<div>");
                 Card.addClass("card border-info mb-3 clearfix");
                 (jumboWord).append(Card);
+                //Call src for stills and animates of each gif
                 Card.html("<img src='" + results[i].images.fixed_height_still.url + "' data-still='" + results[i].images.fixed_height_still.url + "' data-animate='" + results[i].images.fixed_height.url + "' data-state='still' class='gif'>")
                 Card.append("<p>" + results[i].title + "</p>");
                 Card.append("<p>Rating: " + results[i].rating + "</p>");
             }
 
+            //Click to animate and stop each gif function
             $(".gif").on("click", function () {
                 var state = $(this).attr("data-state");
 
@@ -88,7 +90,6 @@ $(document).ready(function () {
         });
 
     })
-
-    //Show extra info about the gifs    
+  
 
 }); //closing of document ready
